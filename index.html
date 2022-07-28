@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="bower_components/Ionicons/css/ionicons.min.css">
   <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
   <link rel="stylesheet" href="dist/css/skins/skin-blue.min.css">
-  
+  <script src="bower_components/moment/moments.js"></script>
   <script src="models/User.js" defer></script>
   <script src="controllers/UserController.js" defer></script>
   <script src="index.js" defer></script>
@@ -173,9 +173,9 @@
               <!-- small box -->
               <div class="small-box bg-green">
                 <div class="inner">
-                  <h3>44</h3>
+                  <h3 id="numbers-users">0</h3>
           
-                  <p>Novos Usuários</p>
+                  <p>Usuários</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-person-add"></i>
@@ -187,7 +187,7 @@
               <!-- small box -->
               <div class="small-box bg-yellow">
                 <div class="inner">
-                  <h3>15</h3>
+                  <h3 id="numbers-users-admin">0</h3>
           
                   <p>Administradores</p>
                 </div>
