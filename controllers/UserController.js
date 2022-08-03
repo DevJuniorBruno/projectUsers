@@ -167,6 +167,8 @@ class UserController {
 
               if(field) {
 
+              if(field.type == "file") continue; 
+
                 switch(field.type) {
 
                 case 'file':
@@ -177,12 +179,17 @@ class UserController {
                   field = form.querySelector("[name=" + name.replace("_", "") + "][value=" + json[name]+ "]");
                 break;
 
-                
-              }
-if( == "file") continue; 
-                field.value = json[name];
-            }
+                case 'checkbox':
+                  field.checked = json[name];
+                break;
 
+                default:
+
+                  field.value = json[name];
+                
+              }   
+            }
+          }
             this.showPanelUpdate();
           })
 
