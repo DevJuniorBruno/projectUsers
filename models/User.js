@@ -54,4 +54,14 @@ class User {
         this._photo = value
     }
 
+    loadFromJSON(json){
+
+        for(let name in json){
+
+            this[name] = json[name]
+
+        }
+
+    }
+
 }
