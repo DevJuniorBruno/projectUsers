@@ -102,6 +102,8 @@ class UserController {
             (content)=>{
                 values.photo = content;
 
+                this.insert(values);
+
                 this.addline(values);
 
                 this.formEl.reset();
@@ -200,9 +202,9 @@ class UserController {
 
       let users = [];
 
-      if(sessionStorage.getItem("users")){
+      if(localStorage.getItem("users")){
 
-        users = JSON.parse(sessionStorage.getItem("users"));
+        users = JSON.parse(localStorage.getItem("users"));
 
       }
 
@@ -232,7 +234,8 @@ class UserController {
 
       users.push(data);
 
-      sessionStorage.setItem("users", JSON.stringify(users));
+      //sessionStorage.setItem("users", JSON.stringify(users));
+      localStorage.setItem("users", JSON.stringify(users));
 
     }
 
@@ -240,8 +243,6 @@ class UserController {
     addline(dataUser) {
   
       let tr = document.createElement("tr");
-
-      this.insert(dataUser);
 
       tr.dataset.user = JSON.stringify(dataUser);
 
